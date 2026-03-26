@@ -118,5 +118,5 @@ I'm actively seeking entry-level Data Analyst / Business Analyst roles in the Lo
 ## Contact
 
 - 📧 Email: leelester0716@gmail.com
-- 🔗 LinkedIn: [linkedin.com/in/lesterlee](https://www.linkedin.com/in/lesterlee)
+- 🔗 LinkedIn: [linkedin.com/in/lesterlee](https://www.linkedin.com/in/lester-lee1)
 - 🐙 GitHub: [github.com/LesterLee0](https://github.com/LesterLee0)
