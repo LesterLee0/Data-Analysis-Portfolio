@@ -1,4 +1,4 @@
-# Lester Lee - Data Analyst Portfolio
+# Lester Lee - Data & Analytics Portfolio
 
 ## About
 Hi, I'm Lester! I'm a Statistics & Data Science student at UCLA with hands-on experience turning raw data into clear, actionable insights. I've worked across R, SQL, Excel, and Tableau — from building regression models on NBA game stats to analyzing 40K+ pizza transactions and telling data-driven stories about museum diversity.
