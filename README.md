@@ -28,6 +28,8 @@ I'm actively seeking entry-level Data Analyst / Business Analyst roles in the Lo
 
 **Code:** [nba-mlr-analysis](https://github.com/LesterLee0/nba-mlr-analysis)
 
+**Report:** [📄 View Final Report (PDF)](https://github.com/LesterLee0/nba-mlr-analysis/blob/main/Project.pdf)
+
 **Goal:** Predict total points scored in NBA games using in-game statistics.
 
 **Description:** Used R to build and evaluate a multiple linear regression model on NBA game statistics. Applied stepwise regression (AIC) to identify the strongest predictors. Performed full model diagnostics including residual analysis, Q-Q plots, and VIF checks for multicollinearity.
@@ -48,6 +50,8 @@ I'm actively seeking entry-level Data Analyst / Business Analyst roles in the Lo
 **Pizza Sales Analysis**
 
 **Code:** [sql-tableau-pizza-project](https://github.com/LesterLee0/sql-tableau-pizza-project)
+
+**Dashboard:** [📊 View Results Dashboard (PDF)](https://github.com/LesterLee0/sql-tableau-pizza-project/blob/main/Results%20Dashboard.pdf)
 
 **Goal:** Extract KPIs and business insights from 40,000+ pizza sales transactions.
 
