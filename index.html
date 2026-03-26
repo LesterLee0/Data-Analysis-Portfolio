@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lester Lee | Data Analyst Portfolio</title>
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:    #0f2744;
+      --blue:    #1a56a0;
+      --accent:  #2b7be8;
+      --light:   #e8f0fb;
+      --bg:      #f5f7fa;
+      --white:   #ffffff;
+      --text:    #1e293b;
+      --muted:   #64748b;
+      --border:  #dde3ec;
+      --tag-bg:  #dbeafe;
+      --tag-fg:  #1e40af;
+      --radius:  12px;
+      --shadow:  0 4px 24px rgba(15,39,68,0.09);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ── Nav ──────────────────────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 60px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    .nav-logo { color: #fff; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.78); text-decoration: none;
+      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    /* ── Hero ─────────────────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3d6e 60%, #1a56a0 100%);
+      color: #fff;
+      padding: 96px 48px 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 48px; flex-wrap: wrap;
+    }
+    .hero-text { max-width: 660px; }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #c3d9ff;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 4px 14px; border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: #7eb8ff; }
+    .hero p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.82);
+      max-width: 580px; margin-bottom: 32px; line-height: 1.75;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 11px 24px; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s; cursor: pointer; border: none;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #2463c4; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.45);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.88);
+      font-size: 0.78rem; font-weight: 500;
+      padding: 5px 13px; border-radius: 100px;
+    }
+
+    /* ── Sections ─────────────────────────────────────────────────────────── */
+    section { padding: 72px 48px; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-label::before {
+      content: ''; display: block; width: 20px; height: 2px;
+      background: var(--accent);
+    }
+    h2.section-title {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800; margin-bottom: 10px; color: var(--navy);
+    }
+    .section-sub {
+      color: var(--muted); font-size: 0.97rem; max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    /* ── About ────────────────────────────────────────────────────────────── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: start;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 16px; font-size: 0.97rem; }
+    .stats-row { display: flex; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num {
+      font-size: 2rem; font-weight: 800; color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+    .skills-block { }
+    .skills-block h3 {
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--navy); margin-bottom: 14px;
+    }
+    .skill-group { margin-bottom: 22px; }
+    .skill-group-label {
+      font-size: 0.78rem; font-weight: 600; color: var(--muted);
+      margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--tag-bg); color: var(--tag-fg);
+      font-size: 0.8rem; font-weight: 500;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .tag.green { background: #dcfce7; color: #166534; }
+    .tag.purple { background: #ede9fe; color: #5b21b6; }
+    .tag.orange { background: #ffedd5; color: #9a3412; }
+
+    /* ── Projects ─────────────────────────────────────────────────────────── */
+    #projects { background: var(--bg); }
+    .filter-row {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;
+    }
+    .filter-btn {
+      padding: 7px 18px; border-radius: 100px; border: 1.5px solid var(--border);
+      background: var(--white); color: var(--muted);
+      font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent); color: #fff; border-color: var(--accent);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.22s, box-shadow 0.22s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(15,39,68,0.14);
+    }
+    .card-header {
+      padding: 24px 24px 0;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 12px;
+    }
+    .card-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .icon-r      { background: #dbeafe; }
+    .icon-sql    { background: #dcfce7; }
+    .icon-excel  { background: #d1fae5; }
+    .icon-other  { background: #fef3c7; }
+    .card-lang {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
+      margin-top: 4px;
+    }
+    .lang-r      { background: #dbeafe; color: #1e40af; }
+    .lang-sql    { background: #dcfce7; color: #166534; }
+    .lang-excel  { background: #d1fae5; color: #065f46; }
+    .lang-other  { background: #fef3c7; color: #92400e; }
+    .card-body { padding: 20px 24px; flex: 1; }
+    .card-body h3 {
+      font-size: 1.02rem; font-weight: 700; margin-bottom: 8px; color: var(--navy);
+    }
+    .card-body .goal {
+      font-size: 0.83rem; font-weight: 600; color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .card-body p {
+      font-size: 0.88rem; color: var(--muted); line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .results-list {
+      list-style: none; margin-bottom: 16px;
+    }
+    .results-list li {
+      font-size: 0.84rem; color: var(--text);
+      padding: 4px 0; padding-left: 18px; position: relative;
+    }
+    .results-list li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--accent); font-size: 0.75rem; top: 5px;
+    }
+    .card-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .tech-tag {
+      background: var(--light); color: var(--blue);
+      font-size: 0.75rem; font-weight: 600;
+      padding: 3px 10px; border-radius: 100px;
+    }
+    .card-footer {
+      padding: 14px 24px;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .card-date { font-size: 0.78rem; color: var(--muted); }
+    .card-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+      text-decoration: none; display: inline-flex; align-items: center; gap: 5px;
+    }
+    .card-link:hover { color: var(--navy); }
+
+    /* ── Experience ───────────────────────────────────────────────────────── */
+    #experience { background: var(--white); }
+    .timeline { max-width: 800px; }
+    .timeline-item {
+      display: grid; grid-template-columns: 120px 1fr;
+      gap: 24px; margin-bottom: 40px; position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: 120px; top: 10px; bottom: -40px;
+      width: 1px; background: var(--border);
+    }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-date {
+      font-size: 0.78rem; color: var(--muted); font-weight: 600;
+      text-align: right; padding-top: 4px;
+      padding-right: 24px;
+    }
+    .timeline-dot {
+      position: absolute; left: 114px; top: 6px;
+      width: 13px; height: 13px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-content h3 { font-size: 0.98rem; font-weight: 700; color: var(--navy); }
+    .timeline-content .company {
+      font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 8px;
+    }
+    .timeline-content ul { list-style: none; }
+    .timeline-content li {
+      font-size: 0.87rem; color: var(--muted);
+      padding: 3px 0; padding-left: 16px; position: relative;
+    }
+    .timeline-content li::before {
+      content: '•'; position: absolute; left: 0; color: var(--accent);
+    }
+
+    /* ── Education ────────────────────────────────────────────────────────── */
+    #education { background: var(--bg); }
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; }
+    .edu-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      box-shadow: var(--shadow); position: relative; overflow: hidden;
+    }
+    .edu-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--accent), #7eb8ff);
+    }
+    .edu-school { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .edu-degree { font-size: 0.87rem; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+    .edu-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 14px; }
+    .edu-gpa {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--light); color: var(--blue);
+      font-size: 0.8rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .edu-courses { margin-top: 14px; }
+    .edu-courses-label { font-size: 0.75rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+
+    /* ── Contact ──────────────────────────────────────────────────────────── */
+    #contact {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3d6e 100%);
+      color: #fff; text-align: center;
+    }
+    #contact .section-label { color: #7eb8ff; }
+    #contact .section-label::before { background: #7eb8ff; }
+    #contact h2 { color: #fff; margin-bottom: 14px; }
+    #contact p { color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 40px; }
+    .contact-cards {
+      display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius); padding: 20px 30px;
+      text-decoration: none; color: #fff; transition: all 0.2s;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .contact-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+    .contact-card-icon { font-size: 1.4rem; }
+    .contact-card-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.06em; }
+    .contact-card-value { font-size: 0.9rem; font-weight: 600; }
+
+    /* ── Footer ───────────────────────────────────────────────────────────── */
+    footer {
+      background: #070f1c;
+      text-align: center; padding: 20px;
+      font-size: 0.8rem; color: rgba(255,255,255,0.35);
+    }
+
+    /* ── Responsive ───────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .hero, section { padding: 56px 20px; }
+      .about-grid, .edu-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .timeline-item::before, .timeline-dot { display: none; }
+      .timeline-date { text-align: left; padding-right: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ──────────────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">Lester Lee</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Data Analyst Portfolio</div>
+    <h1>Hi, I'm <span>Lester Lee</span> 👋</h1>
+    <p>
+      Statistics & Data Science student at UCLA (Expected June 2026) with hands-on experience
+      in SQL, R, Excel, and Tableau. I turn messy data into clear insights — from predicting NBA
+      scores to analyzing 40K+ pizza transactions and building financial forecasting tools.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">View My Projects</a>
+      <a href="./Lester_Lee_Resume.pdf" class="btn btn-outline" target="_blank">Download Resume</a>
+    </div>
+    <div class="hero-badges">
+      <span class="badge">📍 Los Angeles, CA</span>
+      <span class="badge">🎓 UCLA – B.S. Statistics & Data Science</span>
+      <span class="badge">💼 Open to Work</span>
+      <span class="badge">⭐ GPA 3.5/4.0</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ─────────────────────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="section-label">About Me</div>
+  <h2 class="section-title">Background & Skills</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm a data analyst and statistics student at UCLA with a deep interest in finding patterns
+        in data and using them to inform real decisions. My background spans data modeling,
+        predictive analytics, and business intelligence — with practical experience from three internships
+        in diverse industries.
+      </p>
+      <p>
+        I've built predictive regression models in R, managed relational MySQL databases with 40,000+
+        records, created dynamic Excel financial trackers, and automated accounting workflows in
+        QuickBooks. I enjoy every part of the data pipeline — from cleaning and wrangling to
+        visualizing and communicating results.
+      </p>
+      <p>
+        I'm looking for entry-level <strong>Data Analyst</strong> or <strong>Business Analyst</strong>
+        roles in Los Angeles where I can contribute to data-driven teams and keep growing.
+      </p>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Internships</div></div>
+        <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Projects</div></div>
+        <div class="stat"><div class="stat-num">3.5</div><div class="stat-label">GPA</div></div>
+        <div class="stat"><div class="stat-num">40K+</div><div class="stat-label">Rows Analyzed</div></div>
+      </div>
+    </div>
+    <div class="skills-block">
+      <div class="skill-group">
+        <div class="skill-group-label">Programming & Databases</div>
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">R</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Analytics</div>
+        <div class="tags">
+          <span class="tag green">Data Analysis</span>
+          <span class="tag green">Data Cleaning</span>
+          <span class="tag green">Predictive Modeling</span>
+          <span class="tag green">Regression</span>
+          <span class="tag green">Hypothesis Testing</span>
+          <span class="tag green">EDA</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Visualization & Tools</div>
+        <div class="tags">
+          <span class="tag purple">Tableau</span>
+          <span class="tag purple">Excel</span>
+          <span class="tag purple">QuickBooks</span>
+    </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Languages</div>
+        <div class="tags">
+          <span class="tag orange">English (Fluent)</span>
+          <span class="tag orange">Mandarin (Conversational)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ───────────────────────────────────────────────────────────────── -->
+<section id="projects">
+  <div class="section-label">Work</div>
+  <h2 class="section-title">Portfolio Projects</h2>
+  <p class="section-sub">A collection of data analytics projects demonstrating skills across R, SQL, Excel, and data visualization.</p>
+
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+    <button class="filter-btn" onclick="filterProjects('r', this)">R</button>
+    <button class="filter-btn" onclick="filterProjects('sql', this)">SQL / MySQL</button>
+    <button class="filter-btn" onclick="filterProjects('excel', this)">Excel</button>
+    <button class="filter-btn" onclick="filterProjects('other', this)">Other</button>
+  </div>
+
+  <div class="projects-grid" id="projectsGrid">
+
+    <!-- NBA Points Prediction -->
+    <div class="project-card" data-lang="r">
+      <div class="card-header">
+        <div class="card-icon icon-r">📊</div>
+        <span class="card-lang lang-r">R</span>
+      </div>
+      <div class="card-body">
+        <h3>NBA Points Prediction Model</h3>
+        <div class="goal">🎯 Predict team scoring using in-game statistics</div>
+        <p>
+          Collected and cleaned NBA game statistics, performed EDA, and built a
+          <strong>multiple linear regression model</strong> in R to predict points scored.
+          Evaluated model performance using RMSE and R².
+        </p>
+        <ul class="results-list">
+          <li>Assists = strongest predictor (+1.2 pts per assist)</li>
+          <li>Winning teams averaged 9 more points than losers</li>
+          <li>Model validated with RMSE and R² metrics</li>
+          <li>Visualized residuals and predictor relationships</li>
+        </ul>
+        <div class="card-tech">
+          <span class="tech-tag">R</span>
+          <span class="tech-tag">Linear Regression</span>
+          <span class="tech-tag">ggplot2</span>
+          <span class="tech-tag">tidyverse</span>
+          <span class="tech-tag">RMSE / R²</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-date">Feb 2025 – Mar 2025</span>
+        <a href="./NBA_Points_Prediction.R" class="card-link" download>📥 View Code</a>
+      </div>
+    </div>
+
+    <!-- Pizza Sales Analysis -->
+    <div class="project-card" data-lang="sql">
+      <div class="card-header">
+        <div class="card-icon icon-sql">🍕</div>
+        <span class="card-lang lang-sql">MySQL</span>
+      </div>
+      <div class="card-body">
+        <h3>Pizza Sales Analysis</h3>
+        <div class="goal">🎯 Extract KPIs and business insights from 40K+ transactions</div>
+        <p>
+          Designed and managed a <strong>MySQL relational database</strong> of 40,000+ pizza
+          sales transactions. Wrote advanced SQL queries to calculate business KPIs and surface
+          product and revenue insights.
+        </p>
+        <ul class="results-list">
+          <li>Total revenue, AOV, and order volume by time period</li>
+          <li>Top & amp; bottom selling pizzas by revenue and quantity</li>
+          <li>Category contribution % across Classic, Supreme, Veggie, Chicken</li>
+          <li>Peak ordering hours to inform staffing decisions</li>
+        </ul>
+        <div class="card-tech">
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">SQL JOINs</span>
+          <span class="tech-tag">GROUP BY</span>
+          <span class="tech-tag">Window Functions</span>
+          <span class="tech-tag">Subqueries</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-date">Aug 2025 – Sep 2025</span>
+        <a href="https://github.com/LesterLee0/sql-tableau-pizza-project" class="card-link" target="_blank">📥 View Project</a>
+      </div>
+    </div>
+
+    <!-- Business Performance Analysis -->
+    <div class="project-card" data-lang="excel">
+      <div class="card-header">
+        <div class="card-icon icon-excel">📈</div>
+        <span class="card-lang lang-excel">Excel</span>
+      </div>
+      <div class="card-body">
+        <h3>Business Performance Analysis</h3>
+        <div class="goal">🎯 Identify profitability trends across 5+ small businesses</div>
+        <p>
+          Analyzed financial and consumer behavior data for multiple client businesses at
+          LA Tech Rising using Excel. Built data models to track pricing sensitivity, revenue
+          patterns, and retention indicators.
+        </p>
+        <ul class="results-list">
+          <li>Identified profitability trends across 5+ businesses</li>
+          <li>Findings informed revised pricing &amp; retention strategies</li>
+          <li>Delivered structured reports and strategy briefs</li>
+          <li>Guided teams in reaching target audiences more effectively</li>
+        </ul>
+        <div class="card-tech">
+          <span class="tech-tag">Excel</span>
+          <span class="tech-tag">PivotTables</span>
+          <span class="tech-tag">VLOOKUP</span>
+          <span class="tech-tag">Charts</span>
+          <span class="tech-tag">Business Analysis</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-date">Aug 2025 – Nov 2025</span>
+        <span class="card-link" style="color:var(--muted); cursor:default;">LA Tech Rising Internship</span>
+      </div>
+    </div>
+
+    <!-- Financial Forecasting Tracker -->
+    <div class="project-card" data-lang="excel">
+      <div class="card-header">
+        <div class="card-icon icon-excel">💰</div>
+        <span class="card-lang lang-excel">Excel</span>
+      </div>
+      <div class="card-body">
+        <h3>Financial Forecasting Tracker</h3>
+        <div class="goal">🎯 Reduce accounting errors and improve forecasting accuracy</div>
+        <p>
+          Built a multi-department Excel financial tracker at Tenants' Law Firm to monitor
+          income and expenses. Automated transaction reconciliation in QuickBooks and resolved
+          data discrepancies to strengthen audit readiness.
+        </p>
+        <ul class="results-list">
+          <li>Reduced manual data entry errors by 30%</li>
+          <li>Improved forecasting accuracy by 5%</li>
+          <li>Automated month-end close reconciliation</li>
+          <li>Strengthened audit readiness across reporting periods</li>
+        </ul>
+        <div class="card-tech">
+          <span class="tech-tag">Excel</span>
+          <span class="tech-tag">QuickBooks</span>
+          <span class="tech-tag">Financial Modeling</span>
+          <span class="tech-tag">Reconciliation</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-date">May 2025 – Jul 2025</span>
+        <span class="card-link" style="color:var(--muted); cursor:default;">Tenants' Law Firm Internship</span>
+      </div>
+    </div>
+
+    <!-- Shabuya Sales Analysis -->
+    <div class="project-card" data-lang="excel">
+      <div class="card-header">
+        <div class="card-icon icon-excel">🍱</div>
+        <span class="card-lang lang-excel">Excel</span>
+      </div>
+      <div class="card-body">
+        <h3>Restaurant Sales &amp; Operations Analysis</h3>
+        <div class="goal">🎯 Optimize staffing, reduce waste, and grow weekly revenue</div>
+        <p>
+          Analyzed reservation patterns and sales data at Shabuya to identify peak dining times.
+          Conducted a customer survey, tested a late-night menu, and partnered with Too Good To Go
+          to monetize unsold inventory.
+        </p>
+        <ul class="results-list">
+          <li>Cut negative customer feedback by 10% via staffing optimization</li>
+          <li>Increased weekly revenue by 5% with extended weekend hours</li>
+          <li>Generated +$500/month by reducing food waste via Too Good To Go</li>
+          <li>Survey → trial → analysis → permanent implementation cycle</li>
+        </ul>
+        <div class="card-tech">
+          <span class="tech-tag">Excel</span>
+          <span class="tech-tag">Sales Analysis</span>
+          <span class="tech-tag">Survey Design</span>
+          <span class="tech-tag">A/B Testing</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-date">May 2024 – Sep 2024</span>
+        <span class="card-link" style="color:var(--muted); cursor:default;">Shabuya Internship</span>
+      </div>
+    </div>
+
+    <!-- S&P 500 ML Model -->
+    <div class="project-card" data-lang="other">
+      <div class="card-header">
+        <div class="card-icon icon-other">📉</div>
+        <span class="card-lang lang-other">ML</span>
+      </div>
+      <div class="card-body">
+        <h3>S&amp;P 500 Investment Value Prediction</h3>
+        <div class="goal">🎯 Predict long-term investment value of S&amp;P 500 companies</div>
+        <p>
+          Collaborated with the Data Science Club at Pasadena City College to analyze
+          financial data for S&amp;P 500 companies and build a <strong>multivariable regression
+          model</strong> to predict each company's investment potential.
+        </p>
+        <ul class="results-list">
+          <li>Analyzed financial metrics across all S&amp;P 500 companies</li>
+          <li>Built multivariable regression model for value prediction</li>
+          <li>Contributed to feature engineering and data cleaning pipeline</li>
+          <li>Explored P/E ratio, revenue growth as key predictors</li>
+        </ul>
+        <div class="card-tech">
+          <span class="tech-tag">Python / R</span>
+          <span class="tech-tag">ML Regression</span>
+          <span class="tech-tag">EDA</span>
+          <span class="tech-tag">Financial Data</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-date">Sep 2022 – Jun 2024</span>
+        <span class="card-link" style="color:var(--muted); cursor:default;">Data Science Club</span>
+      </div>
+    </div>
+
+    <!-- NASA Space Apps -->
+    <div class="project-card" data-lang="other">
+      <div class="card-header">
+        <div class="card-icon icon-other">🚀</div>
+        <span class="card-lang lang-other">Other</span>
+      </div>
+      <div class="card-body">
+        <h3>Elysium – NASA Space Apps Challenge</h3>
+        <div class="goal">🎯 Simulate a scientifically accurate fictional habitable planet</div>
+        <p>
+          Built <strong>"Elysium"</strong> — an interactive website simulating a fictional
+          habitable exoplanet — by integrating real NASA datasets on mass, gravity, climate,
+          and geology. Competed at the Pasadena NASA Space Apps 2023 hackathon.
+        </p>
+        <ul class="results-list">
+          <li>Integrated datasets from NASA and multiple space agencies</li>
+          <li>Modeled planetary characteristics with scientific accuracy</li>
+          <li>Delivered interactive web simulation for the hackathon</li>
+        </ul>
+        <div class="card-tech">
+          <span class="tech-tag">NASA Open Data</span>
+          <span class="tech-tag">Data Integration</span>
+          <span class="tech-tag">HTML/CSS/JS</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-date">Aug 2023 – Oct 2023</span>
+        <span class="card-link" style="color:var(--muted); cursor:default;">NASA Space Apps 2023</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Experience ─────────────────────────────────────────────────────────────── -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Work History</h2>
+  <p class="section-sub">Internship experience applying data analytics across marketing, finance, and operations.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Aug 2025<br/>Nov 2025</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Business Marketing Intern</h3>
+        <div class="company">LA Tech Rising · Los Angeles, CA</div>
+        <ul>
+          <li>Analyzed 5+ businesses using Excel to identify consumer behavior and profitability trends</li>
+          <li>Researched market trends and transformed findings into actionable marketing insights</li>
+          <li>Guided teams in reaching target audiences through data-backed campaign strategies</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">May 2025<br/>Jul 2025</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Data Entry &amp; Accounting Intern</h3>
+        <div class="company">Tenants' Law Firm · Los Angeles, CA</div>
+        <ul>
+          <li>Automated transaction entry and reconciliation in QuickBooks — reduced errors by 30%</li>
+          <li>Built dynamic Excel trackers that improved forecasting accuracy by 5%</li>
+          <li>Resolved outlier transaction discrepancies to strengthen audit readiness</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">May 2024<br/>Sep 2024</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Sales Performance Analyst Intern</h3>
+        <div class="company">Shabuya · Alhambra, CA</div>
+        <ul>
+          <li>Analyzed reservation patterns to optimize staffing — cut negative feedback by 10%</li>
+          <li>Ran a data-driven late-night menu trial, increasing weekly revenue by 5%</li>
+          <li>Partnered with Too Good To Go to reduce food waste, generating +$500/month</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Education ──────────────────────────────────────────────────────────────── -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2 class="section-title">Academic Background</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-school">University of California, Los Angeles</div>
+      <div class="edu-degree">B.S. Statistics and Data Science</div>
+      <div class="edu-meta">Los Angeles, CA · Expected June 2026</div>
+      <div class="edu-gpa">⭐ GPA: 3.5 / 4.0</div>
+      <div class="edu-courses">
+        <div class="edu-courses-label">Relevant Coursework</div>
+        <div class="tags">
+          <span class="tag">Statistical Programming in R</span>
+          <span class="tag">Probability</span>
+          <span class="tag">Data Collection &amp; Analysis</span>
+          <span class="tag">Optimization Methods</span>
+        </div>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-school">Pasadena City College</div>
+      <div class="edu-degree">A.S. Engineering &amp; Technology · A.S. Mathematics</div>
+      <div class="edu-meta">Pasadena, CA · Jun 2021 – Jun 2024</div>
+      <div class="edu-gpa">⭐ GPA: 3.5 / 4.0</div>
+      <div class="edu-courses">
+        <div class="edu-courses-label">Relevant Coursework</div>
+        <div class="tags">
+          <span class="tag">Statistical Reasoning</span>
+          <span class="tag">Economics</span>
+          <span class="tag">Accounting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ────────────────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <h2 class="section-title">Let's Connect</h2>
+  <p>Open to Data Analyst and Business Analyst opportunities in the Los Angeles area. Feel free to reach out!</p>
+  <div class="contact-cards">
+    <a href="mailto:leelester0716@gmail.com" class="contact-card">
+      <div class="contact-card-icon">✉️</div>
+      <div>
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value">leelester0716@gmail.com</div>
+      </div>
+    </a>
+    <a href="https://www.linkedin.com/in/lesterlee" target="_blank" class="contact-card">
+      <div class="contact-card-icon">💼</div>
+      <div>
+        <div class="contact-card-label">LinkedIn</div>
+        <div class="contact-card-value">linkedin.com/in/lesterlee</div>
+      </div>
+    </a>
+    <a href="https://github.com/LesterLee0" target="_blank" class="contact-card">
+      <div class="contact-card-icon">🐙</div>
+      <div>
+        <div class="contact-card-label">GitHub</div>
+        <div class="contact-card-value">github.com/LesterLee0</div>
+      </div>
+    </a>
+    <a href="./Lester_Lee_Resume.pdf" target="_blank" class="contact-card">
+      <div class="contact-card-icon">📄</div>
+      <div>
+        <div class="contact-card-label">Resume</div>
+        <div class="contact-card-value">Download PDF</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Lester Lee · Data Analyst Portfolio · Built for GitHub Pages
+</footer>
+
+<script>
+  function filterProjects(lang, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.project-card').forEach(card => {
+      if (lang === 'all' || card.dataset.lang === lang) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? '#fff' : 'rgba(255,255,255,0.78)';
+      a.style.fontWeight = a.getAttribute('href') === '#' + current ? '700' : '500';
+    });
+  });
+</script>
+</body>
+</html>
