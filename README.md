@@ -5,7 +5,7 @@ Hi, I'm Lester! I'm a Statistics & Data Science student at UCLA with hands-on ex
 
 I'm actively seeking entry-level Data Analyst / Business Analyst roles in the Los Angeles area. This portfolio showcases the projects and tools I've worked with.
 
-📄 [View My Resume](./Lester_Lee_Resume.pdf) &nbsp;|&nbsp; 📧 leelester0716@gmail.com &nbsp;|&nbsp; 🔗 [LinkedIn](https://www.linkedin.com/in/lesterlee)
+📄 [View My Resume](./Lester_Lee_Resume.pdf) &nbsp;|&nbsp; 📧 leelester0716@gmail.com &nbsp;|&nbsp; 🔗 [LinkedIn](https://www.linkedin.com/in/lester-lee1)
 
 ---
 
