@@ -11,6 +11,7 @@ I'm actively seeking entry-level Data Analyst / Business Analyst roles in the Lo
 
 ## Table of Contents
 - [Portfolio Projects](#portfolio-projects)
+  - [Python + SQL](#python--sql)
   - [R](#r)
   - [SQL + Tableau](#sql--tableau)
   - [Tableau + Excel](#tableau--excel)
@@ -21,6 +22,30 @@ I'm actively seeking entry-level Data Analyst / Business Analyst roles in the Lo
 ---
 
 ## Portfolio Projects
+
+### Python + SQL
+
+**E-commerce Customer Retention & Revenue Analysis**
+
+**Code & full write-up:** [ecommerce-retention-analysis](./ecommerce-retention-analysis)
+
+**Notebook:** [📓 retention_analysis.ipynb](./ecommerce-retention-analysis/notebooks/retention_analysis.ipynb)
+
+**Goal:** Analyze 1.07M real transactions from a UK online retailer to find out where revenue comes from, how well new customers are retained, and which segments deserve marketing spend.
+
+**Description:** Built a reproducible cleaning pipeline in pandas (deduplication, netting cancelled orders against their original purchases, removing fees/adjustments), then ran cohort retention analysis, RFM customer segmentation, and revenue trend analysis. Every analysis is also reproduced in pure SQL with DuckDB. Deliverables include an executed Jupyter notebook, publication-quality charts, and concrete business recommendations.
+
+**Key Findings:**
+- Repeat buyers drive 96.7% of customer revenue — retention, not acquisition, is the lever
+- 25% of customers ("Champions" RFM segment) generate 70% of revenue (£11.6M)
+- Only ~21% of new customers return in month 1, but surviving cohorts stay active for 2 years
+- November revenue peaks at ~£1.4M, 2.5–3x the spring trough (wholesale Christmas stocking)
+
+**Skills:** Python, pandas, Data Cleaning, Cohort Analysis, RFM Segmentation, SQL (CTEs, Window Functions), Data Visualization, Business Recommendations
+
+**Technology:** Python, pandas, matplotlib, DuckDB, Jupyter
+
+---
 
 ### R
 
