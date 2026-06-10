@@ -1,0 +1,5 @@
+# Raw data is 44MB+ — re-download with the link in the README
+data/raw/
+data/processed/transactions_clean.parquet
+__pycache__/
+.ipynb_checkpoints/

@@ -1,0 +1,15 @@
+{
+  "total_revenue": 19087122.060000002,
+  "total_orders": 39231,
+  "identified_customers": 5835,
+  "avg_order_value": 486.53162193163575,
+  "repeat_rate": 0.7242502142245073,
+  "repeat_revenue_share": 0.9665048323272106,
+  "date_min": "2009-12-01",
+  "date_max": "2011-12-09",
+  "m1_retention_avg": 0.2083933798842427,
+  "m1_3_retention_avg": 0.21532876451263458,
+  "uk_revenue_share": 0.8545805757790602,
+  "champions_customer_share": 0.25329905741216796,
+  "champions_revenue_share": 0.7039343734322172
+}
