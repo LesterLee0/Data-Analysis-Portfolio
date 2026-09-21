@@ -376,7 +376,7 @@
     <p>
       Statistics & Data Science student at UCLA (Expected June 2026) with hands-on experience
       in SQL, R, Excel, and Tableau. I turn messy data into clear insights — from predicting NBA
-      scores to analyzing 40K+ pizza transactions and building financial forecasting tools.
+      scores to analyzing 40K+ pizza transactions and telling data stories about museum diversity.
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-primary">View My Projects</a>
@@ -415,7 +415,7 @@
       </p>
       <div class="stats-row">
         <div class="stat"><div class="stat-num">3</div><div class="stat-label">Internships</div></div>
-        <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Projects</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Projects</div></div>
         <div class="stat"><div class="stat-num">3.5</div><div class="stat-label">GPA</div></div>
         <div class="stat"><div class="stat-num">40K+</div><div class="stat-label">Rows Analyzed</div></div>
       </div>
@@ -469,8 +469,7 @@
     <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
     <button class="filter-btn" onclick="filterProjects('r', this)">R</button>
     <button class="filter-btn" onclick="filterProjects('sql', this)">SQL / MySQL</button>
-    <button class="filter-btn" onclick="filterProjects('excel', this)">Excel</button>
-    <button class="filter-btn" onclick="filterProjects('other', this)">Other</button>
+    <button class="filter-btn" onclick="filterProjects('tableau', this)">Tableau</button>
   </div>
 
   <div class="projects-grid" id="projectsGrid">
@@ -541,168 +540,8 @@
       </div>
     </div>
 
-    <!-- Business Performance Analysis -->
-    <div class="project-card" data-lang="excel">
-      <div class="card-header">
-        <span class="card-lang lang-excel">Excel</span>
-      </div>
-      <div class="card-body">
-        <h3>Business Performance Analysis</h3>
-        <div class="goal">Identify profitability trends across 5+ small businesses</div>
-        <p>
-          Analyzed financial and consumer behavior data for multiple client businesses at
-          LA Tech Rising using Excel. Built data models to track pricing sensitivity, revenue
-          patterns, and retention indicators.
-        </p>
-        <ul class="results-list">
-          <li>Identified profitability trends across 5+ businesses</li>
-          <li>Findings informed revised pricing &amp; retention strategies</li>
-          <li>Delivered structured reports and strategy briefs</li>
-          <li>Guided teams in reaching target audiences more effectively</li>
-        </ul>
-        <div class="card-tech">
-          <span class="tech-tag">Excel</span>
-          <span class="tech-tag">PivotTables</span>
-          <span class="tech-tag">VLOOKUP</span>
-          <span class="tech-tag">Charts</span>
-          <span class="tech-tag">Business Analysis</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-date">Aug 2025 – Nov 2025</span>
-        <span class="card-link" style="color:var(--muted); cursor:default;">LA Tech Rising Internship</span>
-      </div>
-    </div>
-
-    <!-- Financial Forecasting Tracker -->
-    <div class="project-card" data-lang="excel">
-      <div class="card-header">
-        <span class="card-lang lang-excel">Excel</span>
-      </div>
-      <div class="card-body">
-        <h3>Financial Forecasting Tracker</h3>
-        <div class="goal">Reduce accounting errors and improve forecasting accuracy</div>
-        <p>
-          Built a multi-department Excel financial tracker at Tenants' Law Firm to monitor
-          income and expenses. Automated transaction reconciliation in QuickBooks and resolved
-          data discrepancies to strengthen audit readiness.
-        </p>
-        <ul class="results-list">
-          <li>Reduced manual data entry errors by 30%</li>
-          <li>Improved forecasting accuracy by 5%</li>
-          <li>Automated month-end close reconciliation</li>
-          <li>Strengthened audit readiness across reporting periods</li>
-        </ul>
-        <div class="card-tech">
-          <span class="tech-tag">Excel</span>
-          <span class="tech-tag">QuickBooks</span>
-          <span class="tech-tag">Financial Modeling</span>
-          <span class="tech-tag">Reconciliation</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-date">May 2025 – Jul 2025</span>
-        <span class="card-link" style="color:var(--muted); cursor:default;">Tenants' Law Firm Internship</span>
-      </div>
-    </div>
-
-    <!-- Shabuya Sales Analysis -->
-    <div class="project-card" data-lang="excel">
-      <div class="card-header">
-        <span class="card-lang lang-excel">Excel</span>
-      </div>
-      <div class="card-body">
-        <h3>Restaurant Sales &amp; Operations Analysis</h3>
-        <div class="goal">Optimize staffing, reduce waste, and grow weekly revenue</div>
-        <p>
-          Analyzed reservation patterns and sales data at Shabuya to identify peak dining times.
-          Conducted a customer survey, tested a late-night menu, and partnered with Too Good To Go
-          to monetize unsold inventory.
-        </p>
-        <ul class="results-list">
-          <li>Cut negative customer feedback by 10% via staffing optimization</li>
-          <li>Increased weekly revenue by 5% with extended weekend hours</li>
-          <li>Generated +$500/month by reducing food waste via Too Good To Go</li>
-          <li>Survey → trial → analysis → permanent implementation cycle</li>
-        </ul>
-        <div class="card-tech">
-          <span class="tech-tag">Excel</span>
-          <span class="tech-tag">Sales Analysis</span>
-          <span class="tech-tag">Survey Design</span>
-          <span class="tech-tag">A/B Testing</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-date">May 2024 – Sep 2024</span>
-        <span class="card-link" style="color:var(--muted); cursor:default;">Shabuya Internship</span>
-      </div>
-    </div>
-
-    <!-- S&P 500 ML Model -->
-    <div class="project-card" data-lang="other">
-      <div class="card-header">
-        <span class="card-lang lang-other">ML</span>
-      </div>
-      <div class="card-body">
-        <h3>S&amp;P 500 Investment Value Prediction</h3>
-        <div class="goal">Predict long-term investment value of S&amp;P 500 companies</div>
-        <p>
-          Collaborated with the Data Science Club at Pasadena City College to analyze
-          financial data for S&amp;P 500 companies and build a <strong>multivariable regression
-          model</strong> to predict each company's investment potential.
-        </p>
-        <ul class="results-list">
-          <li>Analyzed financial metrics across all S&amp;P 500 companies</li>
-          <li>Built multivariable regression model for value prediction</li>
-          <li>Contributed to feature engineering and data cleaning pipeline</li>
-          <li>Explored P/E ratio, revenue growth as key predictors</li>
-        </ul>
-        <div class="card-tech">
-          <span class="tech-tag">Python / R</span>
-          <span class="tech-tag">ML Regression</span>
-          <span class="tech-tag">EDA</span>
-          <span class="tech-tag">Financial Data</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-date">Sep 2022 – Jun 2024</span>
-        <span class="card-link" style="color:var(--muted); cursor:default;">Data Science Club</span>
-      </div>
-    </div>
-
-    <!-- NASA Space Apps -->
-    <div class="project-card" data-lang="other">
-      <div class="card-header">
-        <span class="card-lang lang-other">Other</span>
-      </div>
-      <div class="card-body">
-        <h3>Elysium – NASA Space Apps Challenge</h3>
-        <div class="goal">Simulate a scientifically accurate fictional habitable planet</div>
-        <p>
-          Built <strong>"Elysium"</strong> — an interactive website simulating a fictional
-          habitable exoplanet — by integrating real NASA datasets on mass, gravity, climate,
-          and geology. Competed at the Pasadena NASA Space Apps 2023 hackathon.
-        </p>
-        <ul class="results-list">
-          <li>Integrated datasets from NASA and multiple space agencies</li>
-          <li>Modeled planetary characteristics with scientific accuracy</li>
-          <li>Delivered interactive web simulation for the hackathon</li>
-        </ul>
-        <div class="card-tech">
-          <span class="tech-tag">NASA Open Data</span>
-          <span class="tech-tag">Data Integration</span>
-          <span class="tech-tag">HTML/CSS/JS</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-date">Aug 2023 – Oct 2023</span>
-        <span class="card-link" style="color:var(--muted); cursor:default;">NASA Space Apps 2023</span>
-      </div>
-    </div>
-
-
     <!-- Scene Changers -->
-    <div class="project-card" data-lang="other">
+    <div class="project-card" data-lang="tableau">
       <div class="card-header">
         <span class="card-lang lang-other">Tableau</span>
       </div>
@@ -831,7 +670,7 @@
     <a href="https://www.linkedin.com/in/lester-lee1" target="_blank" class="contact-card">
       <div>
         <div class="contact-card-label">LinkedIn</div>
-        <div class="contact-card-value">linkedin.com/in/lesterlee</div>
+        <div class="contact-card-value">linkedin.com/in/lester-lee1</div>
       </div>
     </a>
     <a href="https://github.com/LesterLee0" target="_blank" class="contact-card">
