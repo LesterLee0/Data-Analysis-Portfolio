@@ -22,6 +22,31 @@ I'm actively seeking entry-level Data Analyst / Business Analyst roles in the Lo
 
 ## Portfolio Projects
 
+### MySQL + Python + Tableau
+
+**Credit Card Customer Churn Analysis**
+
+**Code:** [Credit-Card-Analysis](https://github.com/LesterLee0/Credit-Card-Analysis)
+
+**Dashboard:** [📊 View Interactive Dashboard (Tableau Public)](https://public.tableau.com/app/profile/lester.lee5593/viz/CreditCardCustomerChurnAnalysis_17906399414710/Dashboard1)
+
+**Goal:** Identify which credit card customers are likely to cancel, and determine which segment the bank should target first with a retention campaign.
+
+**Description:** Analyzed 10,127 bank customers from a public Kaggle dataset. Cleaned the data in Python (pandas), loaded it into MySQL, and wrote queries segmenting churn by card tier, transaction volume, and product count. Built a three-panel Tableau dashboard to present the findings.
+
+**Key Findings:**
+- Customers with 20 or fewer transactions churned at 68%, versus 1% for those above 80
+- Low usage combined with holding only 1-2 products reached 87% churn
+- Recommended targeting the 3,512-customer low-usage segment with more saveable customers, rather than the 535-customer group with the highest rate
+- Flagged that the Platinum tier churn figure rested on only 20 customers, and excluded it from the dashboard
+
+**Skills:** SQL Aggregation, CASE Statements, Data Cleaning, Customer Segmentation, Dashboard Design
+
+**Technology:** MySQL, Python (pandas), Tableau Public
+
+---
+
+
 ### R
 
 **NBA Points Prediction — Multiple Linear Regression**
