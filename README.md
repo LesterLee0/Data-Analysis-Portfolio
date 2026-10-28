@@ -28,7 +28,7 @@ I'm actively seeking entry-level Data Analyst / Business Analyst roles in the Lo
 
 **Code:** [Credit-Card-Analysis](https://github.com/LesterLee0/Credit-Card-Analysis)
 
-**Dashboard:** [📊 View Interactive Dashboard (Tableau Public)](https://public.tableau.com/app/profile/lester.lee5593/viz/CreditCardCustomerChurnAnalysis_17906399414710/Dashboard1)
+**Dashboard:** [📊 View Interactive Dashboard (Tableau Public)](https://public.tableau.com/app/profile/lester.lee5593/viz/Book1_17930514740080/Dashboard1?publish=yes)
 
 **Goal:** Identify which credit card customers are likely to cancel, and determine which segment the bank should target first with a retention campaign.
 
